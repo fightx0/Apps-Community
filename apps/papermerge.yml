@@ -50,7 +50,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          TZ: 'America/New_York'
+          TZ: 'America/Los_Angeles'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
