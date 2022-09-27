@@ -8,7 +8,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'Homer'
+        pgrole: 'homer'
         intport: '8080'
         extport: '8080'
         image: 'b4bz/homer'
