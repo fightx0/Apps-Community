@@ -42,7 +42,7 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/etc/localtime:/etc/localtime:ro'
           - '/mnt:/mnt'
-          - '/opt/appdata/{{pgrole}}:/www/assets'
+          - '/opt/appdata/{{pgrole}}:/www/assets/'
        #   - '/opt/appdata/{{pgrole}}/assets:/www/assets'
        #   - '/your/local/assets/:/www/assets'
 
