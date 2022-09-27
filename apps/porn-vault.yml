@@ -40,10 +40,7 @@
         pg_volumes:
           - '/opt/appdata/{{pgrole}}/config:/config'
           - '/opt/appdata/{{pgrole}}/config:/config/config.json'
-          - '/mnt/unionfs/pornvids1:/pornvids1'
-          - '/mnt/unionfs/pornvids2:/pornvids2'
-          - '/mnt/unionfs/pornpics1:/pornpics1'
-          - '/mnt/unionfs/pornpics2:/pornpics2'
+          - '/mnt/unionfs/xxx:/xxx'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting {{pgrole}} ENV'
@@ -51,6 +48,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          TZ: 'America/Los_Angeles'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
