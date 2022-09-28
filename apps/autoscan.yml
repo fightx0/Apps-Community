@@ -73,10 +73,10 @@
 #       touch:
 #         path: '/opt/appdata/{{pgrole}}/config.yml'
         
-    - name: check file that doesn't exist with state touch
+    - name: 'Creating config.yml if it doesnt exist'
       file:
         path: '/opt/appdata/{{pgrole}}/config.yml'
-        state: touch
+        state: 'touch'
         mode: '0775'
         owner: '1000'
         group: '1000'
