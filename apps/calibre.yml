@@ -59,6 +59,9 @@
           TZ: 'America/Los_Angeles'
           WIDTH: '1280'
           HEIGHT: '720'
+          security_opt:
+            - seccomp:unconfined
+
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
@@ -78,3 +81,5 @@
               - '{{pgrole}}'
         state: started
         labels: '{{pg_labels}}'
+        security_opt:
+          - seccomp:unconfined
