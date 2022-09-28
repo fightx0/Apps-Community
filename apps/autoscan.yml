@@ -70,16 +70,8 @@
           AUTOSCAN_VERBOSITY: '1'
 
     - name: 'Checking for existing {{pgrole}}/config.yml'
-      stat:
+      touch:
         path: /opt/appdata/{{pgrole}}/config.yml
-      register: confcheck
-
-    - name: 'Creating {{pgrole}}/config.yml'
-      file: "path={{ item }} state=file mode=0775 owner=1000 group=1000"
-      with_items:
-        - '/opt/appdata/{{pgrole}}/config.yml'
-      ignore_errors: yes
-      when: confcheck.stat.exists == false
     
     # MAIN DEPLOYMENT ############################################################
     - name: 'Deploying {{pgrole}}'
