@@ -46,7 +46,7 @@
           - '/opt/appdata/{{pgrole}}/config:/calibre-web/config'
           - '/etc/localtime:/etc/localtime:ro'
           - '/:/SERVER'
-          - '/mnt/unionfs/books/:/book"
+          - '/mnt/unionfs/books/:/book'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
