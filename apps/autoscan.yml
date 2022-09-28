@@ -71,7 +71,7 @@
 
     - name: 'Checking for existing {{pgrole}}/config.yml'
       touch:
-        path: /opt/appdata/{{pgrole}}/config.yml
+        path: '/opt/appdata/{{pgrole}}/config.yml'
     
     # MAIN DEPLOYMENT ############################################################
     - name: 'Deploying {{pgrole}}'
