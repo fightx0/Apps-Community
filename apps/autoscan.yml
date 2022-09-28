@@ -69,9 +69,14 @@
           PGID: '1000'
           AUTOSCAN_VERBOSITY: '1'
 
-    - name: 'Checking for existing {{pgrole}}/config.yml'
-      touch:
+#     - name: 'Checking for existing {{pgrole}}/config.yml'
+#       touch:
+#         path: '/opt/appdata/{{pgrole}}/config.yml'
+        
+    - name: check file that doesn't exist with state touch
+      file:
         path: '/opt/appdata/{{pgrole}}/config.yml'
+        state: touch
     
     # MAIN DEPLOYMENT ############################################################
     - name: 'Deploying {{pgrole}}'
