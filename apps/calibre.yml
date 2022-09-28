@@ -18,6 +18,8 @@
         intport2: '8081'
         extport2: '8091'
         image: 'linuxserver/calibre:latest'
+        security_opt:
+          - seccomp:unconfined
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -44,11 +46,10 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/config:rw'
+          - '/opt/appdata/{{pgrole}}:/config'
           - '{{path.stdout}}:{{path.stdout}}'
-          - '/mnt/unionfs:/unionfs:rw'
           - '/etc/localtime:/etc/localtime:ro'
-          - '/mnt/unionfs/books:/library:rw'
+          - '/mnt/unionfs/books/books:/Calibre_Library'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
