@@ -48,14 +48,14 @@
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt/unionfs:/unionfs:rw'
           - '/etc/localtime:/etc/localtime:ro'
-          - '/mnt/unionfs/library:/library:rw'
+          - '/mnt/unionfs/books:/library:rw'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
           PUID: '1000'
           PGID: '1000'
-          TZ: 'America/New_York'
+          TZ: 'America/Los_Angeles'
           WIDTH: '1280'
           HEIGHT: '720'
 
