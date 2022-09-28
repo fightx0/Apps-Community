@@ -46,15 +46,17 @@
           - '/opt/appdata/{{pgrole}}/config:/calibre-web/config'
           - '/etc/localtime:/etc/localtime:ro'
           - '/:/SERVER'
+          - '/mnt/unionfs/books/:/book"
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
           USE_CONFIG_DIR: 'true'
           SET_CONTAINER_TIMEZONE: 'true'
-          CONTAINER_TIMEZONE: 'Europe/Copenhagen'
+          CONTAINER_TIMEZONE: 'America/Los_Angeles'
           PUID: '1000'
           PGID: '1000'
+          TZ: 'America/Los_Angeles'
           
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
