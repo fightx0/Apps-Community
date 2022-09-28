@@ -44,12 +44,14 @@
           set_fact:
             pg_volumes:
               - /opt/appdata/code-server/config:/config
+              - /mnt:/mnt
                   
         - name: 'Setting {{pgrole}} ENV'
           set_fact:
             pg_env:
               PUID: '1000'
               PGID: '1000'
+              TZ: "America/Los_Angeles"
     
         # MAIN DEPLOYMENT #############################################################
         - name: 'Deploying {{pgrole}}'
