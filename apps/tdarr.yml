@@ -47,10 +47,16 @@
           - '/opt/appdata/{{pgrole}}/Database:/var/lib/mongodb'
           - '/opt/appdata/{{pgrole}}/Media:/home/Tdarr/Media'
           - '{{path.stdout}}:{{path.stdout}}'
+          - '/opt/appdata/{{pgrole}}/server:/server'
+          - '/opt/appdata/{{pgrole}}/configs:/configs'
+          - '/opt/appdata/{{pgrole}}/logs:/logs'
           
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
+          - TZ: 'America/Los_Angeles'
+          - PUID: '1000'
+          - PGID: '1000'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
