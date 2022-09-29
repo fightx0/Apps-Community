@@ -54,9 +54,9 @@
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
-          - TZ: 'America/Los_Angeles'
-          - PUID: '1000'
-          - PGID: '1000'
+          TZ: 'America/Los_Angeles'
+          PUID: '1000'
+          PGID: '1000'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
