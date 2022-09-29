@@ -50,6 +50,7 @@
           - '/opt/appdata/{{pgrole}}/server:/server'
           - '/opt/appdata/{{pgrole}}/configs:/configs'
           - '/opt/appdata/{{pgrole}}/logs:/logs'
+          - '/opt/appdata/{{pgrole}}/configs:/configs'
           
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
@@ -57,6 +58,7 @@
           TZ: 'America/Los_Angeles'
           PUID: '1000'
           PGID: '1000'
+          internalNode: 'true'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
