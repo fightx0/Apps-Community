@@ -47,6 +47,7 @@
         pg_env:
           PUID: '1000'
           PGID: '1000'
+          TZ: 'America/Los_Angeles'
           INFLUX_ADMIN_USER: 'admin'
           INFLUX_ADMIN_PASSWORD: 'adminpass'
 
