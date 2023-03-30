@@ -36,6 +36,7 @@
           RUNNOW: 'yes'
           SKIPUPDATE: 'no'
           APP_BRANCH: 'master'
+          TZ: 'America/Los_Angeles'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
